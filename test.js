@@ -44,5 +44,5 @@ test('performs math', (t) => {
   t.equals(subtract('g', 5), 'b', 'Should subtract');
   t.equals(subtract('aag', 5), 'aab', 'Should subtract with multiple digits');
   t.equals(subtract('aag', 29), 'zd', 'Should subtract with multiple digits and carry');
-  t.throws(() => subtract('aa', 27), /Error: Number must be > 0/, 'Should not handle negative results')
+  t.throws(() => subtract('aa', 27), /Error: Number must be > 0/, 'Should not handle negative results');
 });
