@@ -6,7 +6,7 @@ const subtract = require('./index').subtract;
 
 
 test('converts letters to numbers', (t) => {
-  t.plan(9);
+  t.plan(11);
 
   t.equals(alpha2Decimal('a'), 1);
   t.equals(alpha2Decimal('j'), 10);
@@ -17,6 +17,8 @@ test('converts letters to numbers', (t) => {
   t.equals(alpha2Decimal('ba'), 53);
   t.equals(alpha2Decimal('zz'), 702);
   t.equals(alpha2Decimal('aaa'), 703);
+  t.throws(() => alpha2Decimal('A'), 703, 'Should not handle any characters besides a-z');
+  t.throws(() => alpha2Decimal(''), 703, 'Should not handle empty string');
 });
 
 
@@ -44,5 +46,5 @@ test('performs math', (t) => {
   t.equals(subtract('g', 5), 'b', 'Should subtract');
   t.equals(subtract('aag', 5), 'aab', 'Should subtract with multiple digits');
   t.equals(subtract('aag', 29), 'zd', 'Should subtract with multiple digits and carry');
-  t.throws(() => subtract('aa', 27), /Error: Number must be > 0/, 'Should not handle negative results');
+  t.throws(() => subtract('aa', 27), 'Should not handle negative results');
 });

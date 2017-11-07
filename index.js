@@ -1,4 +1,8 @@
 const alpha2Decimal = exports.alpha2Decimal = (alpha) => {
+  if (!/^[a-z]+$/.test(alpha)) {
+    throw new Error('Input must be a non-empty string comprised of only characters a-z')
+  }
+
   const letters = alpha.split('');
   let out = 0;
 
