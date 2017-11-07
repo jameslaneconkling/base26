@@ -1,0 +1,14 @@
+{
+  "name": "base-26",
+  "version": "0.0.1",
+  "description": "simple math on the alphabet-based number system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tape": "^4.8.0"
+  }
+}
