@@ -37,25 +37,25 @@ subtract('b', 2) -> throws
 
 
 
-### base26.alpha2Decimal(alpha: string): number
+### base26.from(alpha: string): number
 
 Convert number comprised of lowercase a-z alphabetical digits to the equivalent base10 number
 
-alpha2Decimal('a') -> 1
-alpha2Decimal('z') -> 26
-alpha2Decimal('aab') -> 704
-alpha2Decimal('A') -> throws
-alpha2Decimal('1') -> throws
+from('a') -> 1
+from('z') -> 26
+from('aab') -> 704
+from('A') -> throws
+from('1') -> throws
 
 
 
-### base26.decimal2Alpha(decimal: number): string
+### base26.to(decimal: number): string
 
 Convert positive base10 number (> 0) to alphabetical digits
 
-decimal2Alpha(1) -> 'a'
-decimal2Alpha(26) -> 'z'
-decimal2Alpha(704) -> 'aab'
-decimal2Alpha(0) -> throws
-decimal2Alpha(-10) -> throws
+to(1) -> 'a'
+to(26) -> 'z'
+to(704) -> 'aab'
+to(0) -> throws
+to(-10) -> throws
 ```

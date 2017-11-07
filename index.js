@@ -1,4 +1,4 @@
-const alpha2Decimal = exports.alpha2Decimal = (alpha) => {
+const from = exports.from = (alpha) => {
   if (!/^[a-z]+$/.test(alpha)) {
     throw new Error('Input must be a non-empty string comprised of only characters a-z')
   }
@@ -14,7 +14,7 @@ const alpha2Decimal = exports.alpha2Decimal = (alpha) => {
 };
 
 
-const decimal2Alpha = exports.decimal2Alpha = (decimal) => {
+const to = exports.to = (decimal) => {
   if (decimal <= 0) {
     throw new Error('Number must be > 0');
   }
@@ -34,6 +34,6 @@ const decimal2Alpha = exports.decimal2Alpha = (decimal) => {
 };
 
 
-exports.add = (alpha, num) => decimal2Alpha(alpha2Decimal(alpha) + num);
+exports.add = (alpha, num) => to(from(alpha) + num);
 
-exports.subtract = (alpha, num) => decimal2Alpha(alpha2Decimal(alpha) - num);
+exports.subtract = (alpha, num) => to(from(alpha) - num);
